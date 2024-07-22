@@ -1,8 +1,8 @@
 package day1;
 
-import java.util.HashSet;
+
 import java.util.Stack;
-import java.util.TreeMap;
+
 
 public class infix_to_PostFix {
     public static int prec(char ch){
@@ -18,7 +18,7 @@ public class infix_to_PostFix {
         return 0;
     }
     public static void main(String[] args) {
-        TreeMap<Integer,String> arr = new TreeMap<>();
+
         
         String a = "(p+q)*(m-n)";
         Stack<Character> stack = new Stack<>();
