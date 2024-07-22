@@ -1,9 +1,24 @@
 package day1;
 
 import java.util.Stack;
+import java.util.TreeMap;
 
 public class infix_to_PostFix {
+    public static int prec(char ch){
+        switch (ch){
+            case '+':
+            case '-':
+                return 1;
+            case '/':
+            case '*':
+                return 2;
+
+        }
+        return 0;
+    }
     public static void main(String[] args) {
+        TreeMap<Integer,String> arr = new TreeMap<>();
+        
         String a = "(p+q)*(m-n)";
         Stack<Character> stack = new Stack<>();
         StringBuilder res = new StringBuilder();
@@ -17,18 +32,18 @@ public class infix_to_PostFix {
                     while (!stack.isEmpty() && stack.peek() != '('){
                         res.append(stack.pop());
                     }
-                    stack.pop()
+                    stack.pop();
             }else{
-                switch (ch){
-                    case '+':
-                    case '-':
-                        while (stack.peek() == '+' || stack.peek() == '-' || ){
-                            res.append(stack.pop());
-                        }
-                    case '%':
-
+                while (!stack.empty() && prec(ch)  <= prec(stack.peek())){
+                    res.append(stack.pop());
                 }
+                stack.push(ch);
             }
         }
+        while (!stack.isEmpty()){
+            res.append(stack.pop());
+        }
+        System.out.println(res);
     }
+
 }
