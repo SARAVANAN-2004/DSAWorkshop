@@ -33,6 +33,9 @@ DDRDRR DRDDRR
         if (arr[0][0] ==1){
             find(res,temp,arr,n,0,0,visited);
         }
+        String mov = "A";
+        mov+="B";
+        System.out.println(mov);
         System.out.println(res);
 
     }
