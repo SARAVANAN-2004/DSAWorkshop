@@ -1,12 +1,14 @@
 package day1;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class Rotate_the_arr_by_k_elements {
 
         public static void main(String[] args) {
-//        int[] arr = {1,2,3,4,5,6,7};
+//              int[] arr = {1,2,3,4,5,6,7};
+
 //
 //        int n = 7;
             Scanner in = new Scanner(System.in);
